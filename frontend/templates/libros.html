@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Libros Disponibles{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Libros Disponibles</h1>
+
+    <!-- Formulario de búsqueda -->
+    <div class="mb-4 text-center">
+        <form method="POST">
+            <div class="form-group d-flex justify-content-center">
+                <input type="text" name="termino_busqueda" class="form-control w-50" placeholder="Buscar libro por nombre">
+                <button type="submit" class="btn btn-info ml-2">🔍 Buscar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <!-- Lista de libros -->
+            <ul class="list-group shadow-sm">
+                {% for libro in libros %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1 text-success">{{ libro.titulo }}</h5>
+                            <p class="mb-1 text-muted">por {{ libro.autor }}</p>
+                            <small class="text-info">Disponibles: {{ libro.disponible }}</small>
+                        </div>
+                        <form method="POST" action="{{ url_for('pedir_libro', usuario_id=usuario_id, libro_id=libro.id) }}">
+                            <button type="submit" class="btn btn-warning btn-sm">
+                                📚 Pedir
+                            </button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="mt-4 text-center">
+                <a href="{{ url_for('mis_prestamos', usuario_id=usuario_id) }}" class="btn btn-secondary btn-lg">
+                    Mis préstamos 📖
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

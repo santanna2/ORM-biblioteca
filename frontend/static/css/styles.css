@@ -1,0 +1,78 @@
+/* Estilo para el cuerpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Estilo para la navegación */
+.navbar {
+    background-color: #6c757d;
+}
+
+.nav-link, .navbar-brand {
+    color: #ffffff !important;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+    color: #ffc107 !important;
+}
+
+/* Estilo para los botones */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+    border-color: #b21f2d;
+}
+
+/* Estilo para las alertas */
+.alert {
+    font-size: 16px;
+}
+
+/* Estilo para los formularios */
+.form-control {
+    border-radius: 0.25rem;
+    border-color: #ced4da;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo para las listas de libros y préstamos */
+.list-group-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    border-color: #ccc;
+}
+
+/* Estilo adicional para alertas temporales */
+.alert-dismissible-fade {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
